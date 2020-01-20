@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-    {path: 'quiztest', loadChildren: './feature/quiztest/quiztest.module#QuiztestModule'},
-    {path: 'quizadmin', loadChildren: './feature/quizadmin/quiz-admin.module#QuizAdminModule'},
+    {path: 'quiztest', loadChildren: ()=> import('./feature/quiztest/quiztest.module').then(m => m.QuiztestModule)},
+    {path: 'quizadmin', loadChildren: ()=> import('./feature/quizadmin/quiz-admin.module').then(m => m.QuizAdminModule)},
     {path: '', redirectTo: 'quiztest', pathMatch:'full'}
 ];
 

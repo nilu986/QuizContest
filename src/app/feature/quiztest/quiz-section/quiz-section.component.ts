@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Quiz, QuizConfig } from '../models';
+import { QuizTestService } from '../quiz-test.service';
 
 @Component({
   selector: 'app-quiz-section',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizSectionComponent implements OnInit {
 
-  constructor() { }
+  quizes: any[];
+  quizId:string;
+  quiz: Quiz = new Quiz(null);
+  quizName:string;
+  
+  constructor(private _quizService:QuizTestService) { }
 
   ngOnInit() {
+    this.quizes = this._quizService.getAll();
+    this.quizId = this.quizes[0].id;
+    this.quizName = this.quizes[0].name;
+    this._quizService.get(this.quizId).subscribe((res)=>{
+        if(res){
+          this.quiz = new Quiz(res);
+        }
+    });
   }
 
 }

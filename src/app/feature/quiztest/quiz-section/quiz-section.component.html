@@ -1,1 +1,14 @@
-<p>quiz-section works!</p>
+<div class="container">
+  <br/>
+<app-quiz-header [quizes]="quizes" [quizId]="quizId"></app-quiz-header>
+<div id="quiz">
+    <h2 class="text-center font-weight-normal">{{quizName}}</h2>
+    <hr />
+  
+    <app-question-section [quiz]="quiz"></app-question-section>
+  
+    <!--<app-quiz-results></app-quiz-results>
+    <hr />
+    <app-quiz-action-button></app-quiz-action-button> -->
+  </div>
+</div>
