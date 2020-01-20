@@ -11,7 +11,7 @@ import * as Constant from '../constants';
 export class QuestionSectionComponent implements OnInit, OnChanges {
 
   @Input() public quiz:Quiz;
-  mode:string = Constant.QUIZ_MODE.QUIZ;
+ 
   pager = {
     index: 0,
     size: 1,
@@ -23,6 +23,7 @@ export class QuestionSectionComponent implements OnInit, OnChanges {
   timer: any = null;
   startTime: Date;
   endTime: Date;
+  mode:boolean = false;
   //filteredQuestions:any[] = [];
   constructor() { }
 
@@ -39,6 +40,7 @@ export class QuestionSectionComponent implements OnInit, OnChanges {
       this.startTime = new Date();
       this.duration = this.parsetime(this.config.duration);
       this.timer = setInterval(()=>{this.tick()}, 1000);
+      this.mode = this.quiz.mode == Constant.QUIZ_MODE.QUIZ ? true : false;
       //this.filteredQuestions = this.quiz.questions ? this.quiz.questions.slice(this.pager.index, this.pager.index + this.pager.size) : [];
     }
   }

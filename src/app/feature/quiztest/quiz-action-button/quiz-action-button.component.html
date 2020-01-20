@@ -1,5 +1,5 @@
-<!-- <div *ngIf="mode!='result'">
-    <button class="btn btn-warning" (click)="mode = 'quiz'">Quiz</button>
-    <button class="btn btn-info" (click)="mode = 'review'">Review</button>
+<div *ngIf="mode">
+    <button class="btn btn-warning" (click)="updateQuiz()">Quiz</button>
+    <button class="btn btn-info" (click)="updateReview()">Review</button>
     <button class="btn btn-primary" (click)="onSubmit();">Submit Quiz</button>
-</div> -->
+</div>

@@ -1,4 +1,4 @@
-<div *ngIf="mode=='quiz' && quiz">
+<div *ngIf="mode && quiz">
     <div *ngFor="let question of filteredQuestions;">
         <div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div>
         <div *ngIf="config.duration" class="badge badge-info float-right">Time: {{ellapsedTime}} / {{duration}}</div>

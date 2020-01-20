@@ -26,5 +26,10 @@ export class QuizSectionComponent implements OnInit {
         }
     });
   }
+  quizUpdate(event:Quiz){
+    if(event){
+      this.quiz = event;
+    }
+  }
 
 }

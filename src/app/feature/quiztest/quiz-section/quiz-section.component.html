@@ -7,8 +7,8 @@
   
     <app-question-section [quiz]="quiz"></app-question-section>
   
-    <!--<app-quiz-results></app-quiz-results>
+    <app-quiz-results [quiz]="quiz"></app-quiz-results>
     <hr />
-    <app-quiz-action-button></app-quiz-action-button> -->
+    <app-quiz-action-button [quiz]="quiz" (quizUpdate)="quizUpdate($event)" (quizReviewUpdate)="quizUpdate($event)"></app-quiz-action-button>
   </div>
 </div>

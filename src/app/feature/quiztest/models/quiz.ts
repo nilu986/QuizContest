@@ -7,6 +7,7 @@ export class Quiz {
     description: string;
     config: QuizConfig;
     questions: Question[];
+    mode:string;
 
     constructor(data: any) {
         if (data) {
@@ -18,6 +19,7 @@ export class Quiz {
             data.questions.forEach(q => {
                 this.questions.push(new Question(q));
             });
+            this.mode = data.mode;
         }
     }
 }

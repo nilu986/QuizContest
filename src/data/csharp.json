@@ -2,6 +2,7 @@
     "id": 2,
     "name": "C# and .Net Framework",
     "description": "C# and .Net Quiz (contains C#, .Net Framework, Linq, etc.)",
+    "mode":"quiz",
     "config":  {
         "allowBack": true,
         "allowReview": true,
